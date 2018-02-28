@@ -1,0 +1,36 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title>Keittokirja</title>
+</head>
+<body>
+    <h2>Tik4P3n keittokirja</h2> 
+    
+        <h3>Valmiit annokset</h3> 
+          <ul>
+              <li th:each="annos : ${annokset}">
+                  <a th:href="@{~/annoslistaus/{id}(id=${annos.id})}">
+                      <span th:text="${annos.nimi}">Annos</span>
+                  </a>
+              </li>
+              
+          </ul>
+        
+        <h3> Toiminnot </h3>
+        
+        <ul>
+              <li>
+                <a href="/lisaa-annos">Luo uusi annos</a>
+              </li>
+              <li>
+                <a href="/lisaa-aineita">Lisaa ja tarkastele aineita</a>
+              </li>
+              <li>
+                <a href="/tilastotieto">Tilastotietoa annoksista</a>
+              </li>
+          </ul>
+        
+</body> 
+        
+</html>

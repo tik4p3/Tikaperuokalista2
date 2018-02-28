@@ -1,0 +1,26 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <title th:text="${annos.nimi}"> Annoksen nimi</title>
+</head>
+    <body>
+    <h1 th:text="${annos.nimi}">Annoksen nimi</h1> 
+        
+        <h3>Raaka-aineet lisäämisjärjestyksessä</h3> 
+        
+        <ol type="1">
+            <li th:each="Raakaaine : ${aineet}">
+                <span th:text="${Raakaaine.nimi}">Raaka-aine</span> 
+                <span th:text="${Raakaaine.lisaohje}">Raaka-aine ohje</span>
+            </li>
+        </ol>
+        <br/>
+        <ul>
+            <li>
+                <a th:href="@{~/keittokirja}">Siirry keittokirjan pääsivulle!</a>
+            </li>
+        </ul>
+    </body>        
+
+</html>

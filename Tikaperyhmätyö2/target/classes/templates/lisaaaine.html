@@ -1,0 +1,37 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+Raaka-aineita haetaan raaka-aineet listasta    
+    <head>
+        <title>Lisaa ja tarkastele </title>
+    </head>
+    <body>
+        <h1> Kaytossa olevat raaka-aineet</h1>    
+        <ul>
+            <li th:each="aine : ${raakaaineet}">
+                <span th:text="${aine.nimi}">Raaka-aineet</span><br/>
+                <span th:text="${aine.maara}">maara</span><br/>
+                <span th:text="${aine.lisaohje}">lisaohje</span><br/>    
+            </li>
+        </ul>
+        <p>Lisaa raaka-aineita Keittokirjaan</p>
+            <form method="POST" action="/lisaa-aineita">
+                Raaka-aine:<br/>
+                <input type="text" name="raakaaine"/>   
+                <br/>
+                <input type="submit" value="Lisaa raaka-aine Keittokirjaan"/><br/>
+            </form>
+            <p>Poista raaka-aineita Keittokirjasta</p>
+            <form method="POST" action="/lisaa-aineita">
+                Raaka-aine:<br/>
+                <input type="text" name="poistettava"/>   
+                <br/>
+                <input type="submit" value=">Poista raaka-aine Keittokirjasta"/><br/>
+            </form>
+            <ul>
+            <li>
+                <a th:href="@{~/keittokirja}">Siirry keittokirjan paasivulle!</a>
+            </li>
+        </ul>
+    
+   </body>
+</html>
